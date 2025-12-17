@@ -15,6 +15,7 @@ dist/
 .vscode/
 .idea/
 .gemini/
+.agent/
 
 # User Settings (Local only)
 src/user_settings.json
