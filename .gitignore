@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual Environment
+venv/
+env/
+
+# Build artifacts
+build/
+dist/
+*.spec
+
+# IDE settings
+.vscode/
+.idea/
+.gemini/
+
+# User Settings (Local only)
+src/user_settings.json
+
+# Logs
+*.log
