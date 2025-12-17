@@ -31,10 +31,16 @@ class MainApp(ctk.CTk, TkinterDnD.DnDWrapper):
         self.title(f"{GlobalConfig.APP_NAME} v{GlobalConfig.APP_VERSION}")
         self.geometry(GlobalConfig.APP_SIZE)
 
-        # Set icon
+        # Set Window Icon
         try:
-            icon_path = self.get_asset_path("icons/icon_main.ico")
+            # 1. Try iconbitmap (Taskbar on Windows)
+            icon_path = self.get_asset_path("icon_main.ico")
             self.iconbitmap(icon_path)
+            
+            # 2. Try iconphoto (Title bar / Cross-platform)
+            # Use the ICO file directly or the PNG
+            icon_img = Image.open(icon_path)
+            self.iconphoto(False, ctk.CTkImage(light_image=icon_img, size=(32, 32))._light_image)
         except Exception as e:
             print(f"Icon load error: {e}")
         
